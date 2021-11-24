@@ -5,14 +5,10 @@ export default async function asyncUploadUser() {
   try {
     const upload = await uploadPhoto();
     result.photo = upload;
-  } catch (e) {
-    result.photo = null;
-  }
-
-  try {
     const create = await createUser();
     result.user = create;
   } catch (e) {
+    result.photo = null;
     result.user = null;
   }
   return result;
