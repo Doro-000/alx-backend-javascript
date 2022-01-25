@@ -1,11 +1,11 @@
-console.log('Welcome to Holberton School, what is your name?');
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-process.stdin.setEncoding('utf8');
-process.stdin.on('readable', () => {
-  const input = process.stdin.read();
-  if (input !== null) {
-    process.stdout.write(`Your name is: ${input}`);
-  }
+readline.question('Welcome to Holberton School, what is your name?\n', (name) => {
+  process.stdout.write(`Your name is: ${name}`);
+  readline.close();
 });
 
 process.on('exit', () => {
