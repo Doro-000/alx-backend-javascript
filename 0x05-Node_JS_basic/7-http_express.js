@@ -36,6 +36,7 @@ const app = express();
 
 app.get('/', (request, response) => {
   response.setHeader('Content-Type', 'text/plain');
+  response.statusCode = 500;
   response.send('Hello Holberton School!');
 });
 
