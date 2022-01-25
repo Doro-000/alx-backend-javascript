@@ -14,7 +14,7 @@ export default class StudentsController {
       });
       response.end();
     }).catch(() => {
-      response.status(500).send('Cannot load the database');
+      response.status(500).end('Cannot load the database');
     });
   }
 

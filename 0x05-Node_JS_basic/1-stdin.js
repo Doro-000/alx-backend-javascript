@@ -4,10 +4,10 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('readable', () => {
   const input = process.stdin.read();
   if (input !== null) {
-    console.log(`Your name is: ${input}`);
+    process.stdout.write(`Your name is: ${input}`);
   }
 });
 
 process.on('exit', () => {
-  console.log('This important software is now closing');
+  process.stdout.write('This important software is now closing');
 });

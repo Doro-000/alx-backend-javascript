@@ -28,7 +28,7 @@ function countStudents(path, res) {
       }
     }
   } else {
-    throw new Error('Cannot load the database');
+    res.write('Cannot load the database');
   }
 }
 
