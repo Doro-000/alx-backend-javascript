@@ -7,8 +7,9 @@ function countStudents(path, res) {
     const content = readFileSync(path, { encoding: 'utf-8' }).split('\n');
     content.shift();
     content.pop();
-    res.write('This is the list of our students\n');
-    res.write(`Number of students: ${content.length}\n`);
+    const response = [];
+    response.push('This is the list of our students');
+    response.push(`Number of students: ${content.length}`);
     const StudentPerDep = {};
     content.forEach((Element) => {
       const row = Element.split(',');
@@ -25,9 +26,10 @@ function countStudents(path, res) {
     });
     for (const key in StudentPerDep) {
       if (Object.prototype.hasOwnProperty.call(StudentPerDep, key)) {
-        res.write(`Number of students in ${key}: ${StudentPerDep[key].count}. List: ${StudentPerDep[key].students.join(', ')}\n`);
+        response.push(`Number of students in ${key}: ${StudentPerDep[key].count}. List: ${StudentPerDep[key].students.join(', ')}`);
       }
     }
+    res.write(response.join('\n'));
   } else {
     res.write('Cannot load the database');
   }
