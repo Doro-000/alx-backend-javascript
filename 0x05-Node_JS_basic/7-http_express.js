@@ -7,7 +7,7 @@ function countStudents(path, res) {
     const content = readFileSync(path, { encoding: 'utf-8' }).split('\n');
     content.shift();
     content.pop();
-    res.write('This is the list of our students');
+    res.write('This is the list of our students\n');
     res.write(`Number of students: ${content.length}\n`);
     const StudentPerDep = {};
     content.forEach((Element) => {
