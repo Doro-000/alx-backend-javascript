@@ -1,4 +1,4 @@
-console.log('Welcome to Holberton School, what is your name?');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.setEncoding('utf8');
 process.stdin.on('readable', () => {
@@ -8,6 +8,6 @@ process.stdin.on('readable', () => {
   }
 });
 
-process.on('exit', () => {
-  process.stdout.write('This important software is now closing');
+process.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
