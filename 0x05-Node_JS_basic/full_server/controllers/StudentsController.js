@@ -10,7 +10,7 @@ export default class StudentsController {
       const orderedKey = Object.keys(result);
       orderedKey.sort();
       orderedKey.forEach((key) => {
-        response.write(`Number of students in ${key}: ${result[key].length}. List: ${result[key]}\n`);
+        response.write(`Number of students in ${key}: ${result[key].length}. List: ${result[key].join(', ')}\n`);
       });
       response.end();
     }).catch(() => {
@@ -26,7 +26,7 @@ export default class StudentsController {
     } else {
       readDatabase(argv[2]).then((result) => {
         response.status(200);
-        response.end(`List: ${result[major]}`);
+        response.end(`List: ${result[major].join(', ')}`);
       }).catch(() => {
         response.status(500).end('Cannot load the database');
       });
