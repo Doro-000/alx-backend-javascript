@@ -37,7 +37,7 @@ const app = express();
 
 app.get('/', (request, response) => {
   response.setHeader('Content-Type', 'text/plain');
-  response.write('Hello Holberton School!');
+  response.end('Hello Holberton School!');
 });
 
 app.get('/students', (request, response) => {
