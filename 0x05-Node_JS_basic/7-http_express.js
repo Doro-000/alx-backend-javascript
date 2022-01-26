@@ -31,7 +31,7 @@ function countStudents(path, res) {
     }
     res.write(response.join('\n'));
   } else {
-    throw new Error('Cannot load the database');
+    res.write('This is the list of our students\nCannot load the database');
   }
 }
 
