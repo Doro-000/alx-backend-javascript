@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "mocha": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:mocha/recommended"
+    ],
+    "plugins": [
+        "mocha"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "func-names": "off",
+        "prefer-arrow-callback": "off",
+        "no-console": "off",
+        "no-unused-expressions": "off",
+        "mocha/max-top-level-suites": ["warn", {"limit": 4}]
+    }
+}
